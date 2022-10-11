@@ -21,7 +21,7 @@ const QuizContainer = ({quiz}) => {
                             </div>
                         </div>
                         <div className="bg-grey-lighter p-3 flex items-center justify-between transition hover:bg-grey-light">
-                            <button className='bg-slate-300 w-4/5 rounded py-1 font-medium'><Link to={`/${id}`}>Start Practice</Link></button>
+                            <button className= 'bg-teal-500 ease-in duration-300 text-white w-4/5 rounded py-1 font-medium hover:bg-teal-700'><Link to={`/${id}`}>Start Practice</Link></button>
                             <i className="fas fa-chevron-right"></i>
                         </div>
                     </div>
