@@ -8,12 +8,16 @@ import Static from './components/Static';
 import Main from './components/Main/Main';
 
 const router = createBrowserRouter([
-  {path: '/', element: <Main></Main>, children: [
-    {path: '/', element: <Quiz></Quiz>},
-    {path: '/topic', element: <Topic></Topic>},
-    {path: '/static', element: <Static></Static>},
-    {path: '/blog', element: <Blog></Blog>},
-  ]}
+  {
+    path: '/',element: <Main></Main>, children: [
+      {path: '/',  loader: async () => {
+        return fetch('https://openapi.programming-hero.com/api/quiz')
+      }, element: <Quiz></Quiz>},
+      {path: '/topic', element: <Topic></Topic>},
+      { path: '/static', element: <Static></Static> },
+      { path: '/blog', element: <Blog></Blog> },
+    ]
+  }
 ])
 
 function App() {

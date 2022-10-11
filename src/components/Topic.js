@@ -1,9 +1,11 @@
 import React from 'react';
 
-const Topic = () => {
+
+
+const Topic = ({quiz}) => {
+    console.log(quiz);
     return (
         <div>
-            Topic page
         </div>
     );
 };
