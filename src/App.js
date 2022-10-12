@@ -7,21 +7,22 @@ import Blog from './components/Blog';
 import Static from './components/Static';
 import Main from './components/Main/Main';
 import SingleQuiz from './components/Singlequiz/SingleQuiz';
+import Error from './components/Error';
 
 const router = createBrowserRouter([
-  {
-    path: '/',element: <Main></Main>, children: [
+  {path: '/',element: <Main></Main>, errorElement: <Error></Error>, children: [
       {path: '/',  loader: async () => {
         return fetch('https://openapi.programming-hero.com/api/quiz')
       }, element: <Quiz></Quiz>},
       {path: '/topic', element: <Topic></Topic>},
-      { path: '/static', element: <Static></Static> },
+      { path: '/static', loader: async () => {
+        return fetch('https://openapi.programming-hero.com/api/quiz')
+      },  element: <Static></Static> },
       { path: '/blog', element: <Blog></Blog> },
       {path: '/:quizId', loader: async({params})=>{
         return fetch(`https://openapi.programming-hero.com/api/quiz/${params.quizId}`)
-      }, element: <SingleQuiz></SingleQuiz>}
-    ]
-  }
+      }, element: <SingleQuiz></SingleQuiz>},
+    ]},
 ])
 
 function App() {
