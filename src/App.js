@@ -9,6 +9,7 @@ import Main from './components/Main/Main';
 import SingleQuiz from './components/Singlequiz/SingleQuiz';
 import Error from './components/Error';
 
+
 const router = createBrowserRouter([
   {path: '/',element: <Main></Main>, errorElement: <Error></Error>, children: [
       {path: '/',  loader: async () => {
