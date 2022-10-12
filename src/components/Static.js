@@ -8,7 +8,7 @@ const Static = () => {
     return (
         <div className='w-full flex justify-center items-center mt-8 '>
             <div className=''>
-                <LineChart className='bg-lime-100 rounded' width={700} height={450} data={chartLoaderData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+                <LineChart className='bg-lime-100 rounded' width={550} height={350} data={chartLoaderData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
                     <Line type="monotone" dataKey="total" stroke="#8884d8" />
                     <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
                     <XAxis dataKey="name" />
